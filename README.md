@@ -238,27 +238,3 @@ RoadGuard/
   NumPy/OpenCV.
 - Add batch normalization and dropout, implemented from scratch.
 
-## 14. Viva Questions & Answers (sample)
-
-**Q: Why not use TensorFlow/PyTorch?**
-A: The syllabus requires demonstrating NumPy, perceptrons, forward/backprop
-and loss/optimizers manually — using a framework would hide those
-mechanics.
-
-**Q: Why 32×32 input images?**
-A: Keeps the flattened feature vector (3,072) small enough for a
-fully-connected NumPy network to train on a normal laptop without a GPU.
-
-**Q: Why is BCE used instead of MSE for classification?**
-A: BCE penalizes confident wrong predictions much more heavily and
-produces cleaner gradients when paired with a sigmoid output, which is
-why `results/loss_comparison.png` shows a real trained comparison.
-
-**Q: How is class imbalance handled?**
-A: `prepare_dataset.py` reports and warns about imbalance between the
-normal/damaged counts after the split.
-
-**Q: What happens if the model hasn't been trained?**
-A: `/predict` returns an explicit error, and the Performance page shows
-"Train the model first to view actual model performance." instead of
-placeholder numbers.
